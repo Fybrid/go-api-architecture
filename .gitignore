@@ -1,0 +1,8 @@
+# Environment & secrets
+.env
+
+# Local developer notes
+.codex/
+
+# GitHub tooling/config not intended for commits
+.github/copilot-instructions.md
