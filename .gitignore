@@ -6,3 +6,6 @@
 
 # GitHub tooling/config not intended for commits
 .github/copilot-instructions.md
+
+# Ignore build outputs
+app
