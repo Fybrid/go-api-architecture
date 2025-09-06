@@ -1,6 +1,7 @@
 package main
 
 import (
+    "log"
 	"net/http"
 
 	"github.com/Fybrid/go-api-architecture/internal/http/app/router"
@@ -9,7 +10,9 @@ import (
 )
 
 func main() {
-	pkg.LoadEnv()
+	if err := pkg.LoadDotenv([]string{".env", "../.env", "../../.env"}); err != nil {
+		log.Fatal(err)
+	}
 
 	//DB接続
 	// db, err := sql.Open("mysql", "root:fybrid@tcp(127.0.0.1:3306)/estell")

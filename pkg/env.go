@@ -1,18 +1,20 @@
 package pkg
 
 import (
-    "log"
+    "fmt"
 
     "github.com/joho/godotenv"
 )
 
-func LoadEnv() {
-    // Try common locations so it works from repo root or cmd/app
-    candidates := []string{".env", "../.env", "../../.env"}
-    for _, p := range candidates {
+func LoadDotenv(paths []string) error {
+    for _, p := range paths {
         if err := godotenv.Load(p); err == nil {
-            return
+            return nil
         }
     }
-    log.Fatal("Error loading .env file")
+    return fmt.Errorf("could not load .env from any of: %v", paths)
+}
+
+func LoadEnv() {
+    _ = LoadDotenv([]string{".env", "../.env", "../../.env"})
 }
