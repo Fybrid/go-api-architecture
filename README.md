@@ -26,8 +26,18 @@ root
 │       └── app
 │           ├── handler
 │           └── router
-└── pkg
+├── pkg
+└── README.md
 ```
+
+### 各ディレクトリの役割
+- `cmd/app`: アプリのエントリーポイント（`main.go`）
+- `internal/http/app/router`: HTTPルーター定義
+- `internal/http/app/handler`: HTTPハンドラー
+- `internal/websocket/app/router`: WebSocketルーター定義
+- `internal/websocket/app/handler`: WebSocketハンドラー
+- `pkg`: 共有ユーティリティや共通コード
+- `docs`: ドキュメント
 
 ## クイックスタート
 
@@ -95,4 +105,6 @@ $ mysql.server stop
 ## ドキュメント
 
 - [ドキュメント入口](./docs/README.md)
+- [コミットルール](docs/branch.md)
+- [ブランチルール](docs/command.md)
 - 学習ログ: `docs/learning/`
